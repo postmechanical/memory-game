@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct Grid {
+class Grid {
     let width: UInt
     let height: UInt
     
-    var cards: [[Card]] {
+    lazy var cards: [[Card]] = {
         var sourceCards = [Card]()
         for _ in 0..<(Int(width * height) / 2) {
             guard let type = CardType.allCases.randomElement() else { continue }
-            let card = Card(type)
-            sourceCards.append(card)
-            sourceCards.append(card)
+            let card1 = Card(type)
+            let card2 = Card(type)
+            sourceCards.append(card1)
+            sourceCards.append(card2)
         }
         var cards = [[Card]]()
         var usedSourceCardIndexes = [Int]()
@@ -40,7 +41,7 @@ struct Grid {
             h += 1
         }
         return cards
-    }
+    }()
     
     init(width: UInt, height: UInt) {
         self.width = width
