@@ -13,6 +13,9 @@
 		B0A249D0222F30DB007AD1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A249CF222F30DB007AD1E0 /* Assets.xcassets */; };
 		B0A249D3222F30DB007AD1E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A249D1222F30DB007AD1E0 /* LaunchScreen.storyboard */; };
 		B0A249DB222F3161007AD1E0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249DA222F3161007AD1E0 /* GamePlayViewController.swift */; };
+		B0A249DD222F3A03007AD1E0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249DC222F3A03007AD1E0 /* Grid.swift */; };
+		B0A249DF222F4527007AD1E0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249DE222F4527007AD1E0 /* CardView.swift */; };
+		B0A249E1222F49B2007AD1E0 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B0A249D2222F30DB007AD1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A249D4222F30DB007AD1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A249DA222F3161007AD1E0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		B0A249DC222F3A03007AD1E0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		B0A249DE222F4527007AD1E0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				B0A249C8222F30D9007AD1E0 /* AppDelegate.swift */,
 				B0A249CF222F30DB007AD1E0 /* Assets.xcassets */,
+				B0A249DE222F4527007AD1E0 /* CardView.swift */,
+				B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */,
 				B0A249DA222F3161007AD1E0 /* GamePlayViewController.swift */,
+				B0A249DC222F3A03007AD1E0 /* Grid.swift */,
 				B0A249D4222F30DB007AD1E0 /* Info.plist */,
 				B0A249D1222F30DB007AD1E0 /* LaunchScreen.storyboard */,
 				B0A249CA222F30D9007AD1E0 /* LobbyViewController.swift */,
@@ -140,7 +149,10 @@
 			files = (
 				B0A249CB222F30D9007AD1E0 /* LobbyViewController.swift in Sources */,
 				B0A249DB222F3161007AD1E0 /* GamePlayViewController.swift in Sources */,
+				B0A249DD222F3A03007AD1E0 /* Grid.swift in Sources */,
 				B0A249C9222F30D9007AD1E0 /* AppDelegate.swift in Sources */,
+				B0A249E1222F49B2007AD1E0 /* GamePlayView.swift in Sources */,
+				B0A249DF222F4527007AD1E0 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

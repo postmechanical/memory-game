@@ -10,13 +10,15 @@ import UIKit
 
 class LobbyViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    @IBAction func back(_ segue: UIStoryboardSegue) {
-        
+    @IBAction func back(_ segue: UIStoryboardSegue) { }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let identifier = segue.identifier,
+            let grid = Grid(identifier),
+            let gamePlayViewController = segue.destination as? GamePlayViewController
+            else { return }
+        gamePlayViewController.grid = grid
     }
 
 }

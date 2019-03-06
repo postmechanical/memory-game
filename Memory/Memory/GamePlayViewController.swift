@@ -9,5 +9,12 @@
 import UIKit
 
 class GamePlayViewController: UIViewController {
-
+    @IBOutlet var gamePlayView: GamePlayView!
+    
+    var grid = Grid(width: 0, height: 0)
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gamePlayView.setUp(grid)
+    }
 }
