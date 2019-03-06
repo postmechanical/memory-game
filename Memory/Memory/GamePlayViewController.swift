@@ -16,5 +16,16 @@ class GamePlayViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         gamePlayView.setUp(grid)
+        gamePlayView.delegate = self
+    }
+}
+
+extension GamePlayViewController: GamePlayViewDelegate {
+    func didSelect(_ cardView: CardView, at indexPath: IndexPath) {
+        guard !cardView.isRevealed else { return }
+        cardView.reveal()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            cardView.reset()
+        }
     }
 }

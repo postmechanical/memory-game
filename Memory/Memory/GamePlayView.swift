@@ -8,10 +8,30 @@
 
 import UIKit
 
+protocol GamePlayViewDelegate: NSObjectProtocol {
+    func didSelect(_ cardView: CardView, at indexPath: IndexPath)
+}
+
 class GamePlayView: UIView {
     private(set) var didSetUp = false
-    private(set) var cards = [[CardView]]()
-
+    private(set) var cardViews = [[CardView]]()
+    weak var delegate: GamePlayViewDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+        addGestureRecognizer(tapRecognizer)
+    }
+    
     func setUp(_ grid: Grid) {
         guard !didSetUp else { return }
         let size = bounds.width / CGFloat(grid.width)
@@ -20,21 +40,34 @@ class GamePlayView: UIView {
             var w = 0
             var row = [CardView]()
             while w < grid.width {
-                let card = CardView()
-                addSubview(card)
+                let cardView = CardView(grid.cards[h][w])
+                addSubview(cardView)
                 NSLayoutConstraint.activate([
-                    card.widthAnchor.constraint(equalToConstant: size),
-                    card.heightAnchor.constraint(equalToConstant: size),
-                    card.leadingAnchor.constraint(equalTo: leadingAnchor, constant: size * CGFloat(w)),
-                    card.topAnchor.constraint(equalTo: topAnchor, constant: size * CGFloat(h))
+                    cardView.widthAnchor.constraint(equalToConstant: size),
+                    cardView.heightAnchor.constraint(equalToConstant: size),
+                    cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: size * CGFloat(w)),
+                    cardView.topAnchor.constraint(equalTo: topAnchor, constant: size * CGFloat(h))
                     ])
-                row.append(card)
+                row.append(cardView)
                 w += 1
             }
-            cards.append(row)
+            cardViews.append(row)
             h += 1
         }
         didSetUp = true
+    }
+    
+    @objc func tap(_ recognizer: UITapGestureRecognizer) {
+        guard let view = hitTest(recognizer.location(in: self), with: nil) else { return }
+        for (r, row) in cardViews.enumerated() {
+            for (c, cardView) in row.enumerated() {
+                if cardView == view {
+                    let indexPath: IndexPath = [c, r]
+                    delegate?.didSelect(cardView, at: indexPath)
+                    break
+                }
+            }
+        }
     }
 
 }

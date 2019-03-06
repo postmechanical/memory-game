@@ -16,6 +16,8 @@
 		B0A249DD222F3A03007AD1E0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249DC222F3A03007AD1E0 /* Grid.swift */; };
 		B0A249DF222F4527007AD1E0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249DE222F4527007AD1E0 /* CardView.swift */; };
 		B0A249E1222F49B2007AD1E0 /* GamePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */; };
+		B0A249E3223022E6007AD1E0 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249E2223022E6007AD1E0 /* CardType.swift */; };
+		B0A249E522303CFA007AD1E0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A249E422303CFA007AD1E0 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B0A249DC222F3A03007AD1E0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		B0A249DE222F4527007AD1E0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayView.swift; sourceTree = "<group>"; };
+		B0A249E2223022E6007AD1E0 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		B0A249E422303CFA007AD1E0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 			children = (
 				B0A249C8222F30D9007AD1E0 /* AppDelegate.swift */,
 				B0A249CF222F30DB007AD1E0 /* Assets.xcassets */,
+				B0A249E422303CFA007AD1E0 /* Card.swift */,
+				B0A249E2223022E6007AD1E0 /* CardType.swift */,
 				B0A249DE222F4527007AD1E0 /* CardView.swift */,
 				B0A249E0222F49B2007AD1E0 /* GamePlayView.swift */,
 				B0A249DA222F3161007AD1E0 /* GamePlayViewController.swift */,
@@ -149,10 +155,12 @@
 			files = (
 				B0A249CB222F30D9007AD1E0 /* LobbyViewController.swift in Sources */,
 				B0A249DB222F3161007AD1E0 /* GamePlayViewController.swift in Sources */,
+				B0A249E3223022E6007AD1E0 /* CardType.swift in Sources */,
 				B0A249DD222F3A03007AD1E0 /* Grid.swift in Sources */,
 				B0A249C9222F30D9007AD1E0 /* AppDelegate.swift in Sources */,
 				B0A249E1222F49B2007AD1E0 /* GamePlayView.swift in Sources */,
 				B0A249DF222F4527007AD1E0 /* CardView.swift in Sources */,
+				B0A249E522303CFA007AD1E0 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

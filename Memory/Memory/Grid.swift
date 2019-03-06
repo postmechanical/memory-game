@@ -12,6 +12,36 @@ struct Grid {
     let width: UInt
     let height: UInt
     
+    var cards: [[Card]] {
+        var sourceCards = [Card]()
+        for _ in 0..<(Int(width * height) / 2) {
+            guard let type = CardType.allCases.randomElement() else { continue }
+            let card = Card(type)
+            sourceCards.append(card)
+            sourceCards.append(card)
+        }
+        var cards = [[Card]]()
+        var usedSourceCardIndexes = [Int]()
+        var h = 0
+        while h < height {
+            var w = 0
+            var row = [Card]()
+            while w < width {
+                var index = Int.random(in: 0..<sourceCards.count)
+                while usedSourceCardIndexes.contains(index) {
+                    index = Int.random(in: 0..<sourceCards.count)
+                }
+                usedSourceCardIndexes.append(index)
+                let c = sourceCards[index]
+                row.append(c)
+                w += 1
+            }
+            cards.append(row)
+            h += 1
+        }
+        return cards
+    }
+    
     init(width: UInt, height: UInt) {
         self.width = width
         self.height = height

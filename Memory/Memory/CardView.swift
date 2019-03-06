@@ -9,16 +9,21 @@
 import UIKit
 
 class CardView: UIView {
+    private(set) var card: Card
     let imageView = UIImageView()
+    
+    var isRevealed: Bool {
+        return card.isRevealed
+    }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(_ card: Card) {
+        self.card = card
+        super.init(frame: CGRect.zero)
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
     
     func commonInit() {
@@ -34,5 +39,19 @@ class CardView: UIView {
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -2.0),
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.0)
             ])
+    }
+    
+    func reveal() {
+        card.isRevealed = true
+        UIView.transition(with: imageView, duration: 0.2, options: [.curveEaseInOut, .transitionFlipFromLeft], animations: {
+            self.imageView.image = self.card.type.image
+        }, completion: nil)
+    }
+    
+    func reset() {
+        card.isRevealed = false
+        UIView.transition(with: imageView, duration: 0.2, options: [.curveEaseInOut, .transitionFlipFromRight], animations: {
+            self.imageView.image = UIImage(named: "allCardBacks")
+        }, completion: nil)
     }
 }
